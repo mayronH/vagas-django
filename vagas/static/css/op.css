@@ -10,7 +10,6 @@
 
 .opportunities {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
@@ -73,6 +72,10 @@
     background: var(--darkred);
 }
 
+.header{
+    padding-bottom: 2rem;
+}
+
 .buttons.header a {
     color: var(--white);
 
@@ -95,4 +98,16 @@
 
 .formOpportunity .buttons a:first-child:hover {
     background: var(--grey);
+}
+
+@media (min-width: 600px){
+    .opportunities {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px){
+    .opportunities{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

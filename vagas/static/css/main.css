@@ -134,6 +134,13 @@ h6 {
     bottom: 0; */
 }
 
+@media only screen and (max-width:968px){ 
+    .container{
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .menu {
         display: block;
@@ -143,5 +150,11 @@ h6 {
 
     .logo {
         padding-bottom: 0.95rem;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .pageTitle{
+        font-size: 3rem;
     }
 }

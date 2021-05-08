@@ -29,6 +29,7 @@
 .links a {
     color: var(--white);
     text-decoration: none;
+    text-align: center;
     font-size: 1.125rem;
     font-weight: 600;
 
