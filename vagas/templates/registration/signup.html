@@ -1,0 +1,22 @@
+{% extends '../base.html' %}
+
+{% block meta %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="containerForm">
+    <div class="form">
+        <h1 class="pageTitle">Registrar</h1>
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="next" value="{{ next }}">
+            <footer class="buttons">
+                <button type="submit">Registrar</button>
+            </footer>
+        </form>
+    </div>
+</div>
+{% endblock %}

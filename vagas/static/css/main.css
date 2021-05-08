@@ -1,0 +1,152 @@
+:root {
+    --background: #fcfcff;
+    --text: #494d4b;
+
+    --red:#FF2E63;
+    --darkred: #db1447;
+    --lightblue: #08D9D6;
+    --blue: #127bc0;
+    --darkblue: #252A34;
+    --white: #fff;
+    --grey: #EAEAEA;
+
+    --lightborderline: #dcdcdc;
+    --darkborderline: #353b42;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    overflow-x: hidden;
+
+    font-family: "Inter", sans-serif;
+
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+
+    display: flex;
+    flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+}
+
+.conteudo {
+    flex: 1;
+    
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 1rem;
+
+    background: var(--darkblue);
+}
+
+.menu nav ul{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.menu a{
+    color: var(--grey);
+    text-decoration: none;
+}
+
+.logo a{
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.container {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageTitle {
+    color: var(--darkblue);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 4rem;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+
+.buttons{
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.875rem;
+
+    padding-top: 2rem;
+}
+
+.buttons a, .buttons button{
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    border-radius: 5px;
+
+    padding: 0.8rem 1.25rem;
+
+    transition: background 0.2s;
+}
+
+.rodape{
+    background: var(--grey);
+
+    border-top: 1px solid var(--lightborderline);
+
+    text-align: center;
+
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+
+    /* position: fixed;
+    bottom: 0; */
+}
+
+
+@media only screen and (max-width: 767px) {
+    .menu{
+        display: block;
+
+        text-align: center;
+    }
+
+    .logo{
+        padding-bottom: 0.95rem;
+    }
+}

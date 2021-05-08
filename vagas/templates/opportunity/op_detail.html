@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+    <meta name="description" content="{{opportunity.name}} - {{opportunity.author}}: {{ opportunity.description|slice:':100' }}"/>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/op_detail.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="containerOpportunity">
+        <div class="opportunity">
+            <main>
+                <h1 class="pageTitle">{{ opportunity.name }}</h1>
+
+                <h2>{{ opportunity.author.company }}</h2>
+
+                <hr>
+
+                <p>{{ opportunity.description|linebreaksbr }}</p>
+
+                <hr>
+
+                <h2>Requisitos</h2>
+                <p>{{ opportunity.requirements|linebreaksbr }}</p>
+
+                <h2>Nível de Escolaridade</h2>
+                <p>{{ opportunity.minimum_schooling }}</p>
+                
+                <h2>Faixa Salarial</h2>
+                <p>{{ opportunity.salary }}</p>
+            </main>
+            <footer class="buttons">
+                <a href="javascript:history.back()">Voltar</a>
+                <a href="{% url 'add_candidacy' pk=opportunity.pk %}">Inscrever</a>
+            </footer>
+        </div>
+    </div>
+{% endblock %}

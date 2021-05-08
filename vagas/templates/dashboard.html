@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block meta %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="containerDashboard">
+    <table id="dashboard" class="display">
+        <thead>
+            <tr>
+                <th>Vaga</th>
+                <th>Empresa</th>
+                <th>Nome do candidato</th>
+                <th>Email do candidato</th>
+                <th>Experiencias</th>
+                <th>Nível de Escolaridade</th>
+                <th>Pretensão salarial</th>
+                <th>Data de criação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in dataTable %}
+            <tr>
+                <td>{{ c.opportunity.name }}</td>
+                <td>{{ c.opportunity.author.company }}</td>
+                <td>{{ c.applicant.applicant }}</td>
+                <td>{{ c.applicant.email }}</td>
+                <td>{{ c.experiences }}</td>
+                <td>{{ c.schooling }}</td>
+                <td>{{ c.salary_expectation }}</td>
+                <td>{{ c.created_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="graphics">
+        <div class="graphic">
+            <canvas id="opByMonth"></canvas>
+        </div>
+        <div class="graphic">
+            <canvas id="candidacyByMonth"></canvas>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block import %}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready( function () {
+        $('#dashboard').DataTable();
+    } );
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('opByMonth');
+    var labels = {{ labelOpportunity|safe }};
+    var data = {{ dataOpportunity|safe }};
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: labels,
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Vagas Criadas por Mês'
+                }
+            },
+        }
+    });
+
+    var ctx = document.getElementById('candidacyByMonth');
+    var labels = {{ labelCandidacy|safe }};
+    var data = {{ dataCandidacy|safe }};
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: labels,
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Candidaturas por Mês'
+                }
+            },
+        }
+    });
+
+</script>
+{% endblock %}

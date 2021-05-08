@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% block meta %}
+    <meta name="description" content="Página de vagas." />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/op.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<h1 class="pageTitle">Vagas Disponíveis</h1>
+<div class="containerOpportunities">
+    <div class="opportunities">
+        {% for op in opportunities %}
+            <div class="opportunity">
+                <header>
+                    <h2>{{op.name}}</h2>
+                </header>
+                <main>
+                    <p>{{ op.description|linebreaksbr }}</p>
+                </main>
+                <footer class="buttons">
+                    <a href="{% url 'opportunity' pk=op.pk %}"> + Detalhes</a>
+                </footer>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if opportunities.paginator.num_pages > 1 %} 
+        {% include '_pagination.html' with opportunities=opportunities %} 
+    {% endif %}
+</div>
+
+{% endblock %}

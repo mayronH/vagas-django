@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Vagas Django</title>
+
+        {% block meta %} {% endblock %}
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/pagination.css' %}" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600&family=Lexend:wght@100;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+            integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header class="menu">
+            <div class="logo">
+                <a href="/">
+                    <span>Vagas App</span>
+                </a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="{% url 'opportunity_list' %}">Vagas</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        {% if user.is_company %}
+                        <li>
+                            <a href="{% url 'my_opportunities' %}">Minhas Vagas</a>
+                        </li>
+                        {% endif %}
+                        <li>
+                            <a href="{% url 'dashboard' %}">Relatórios</a>
+                        </li>
+                        {% if user.is_applicant %}
+                        <li>
+                            <a href="{% url 'my_candidacies' %}">Minhas Candidaturas</a>
+                        </li>
+                        {% endif %}
+                    <li>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'signup' %}">Registrar</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+
+        <main class="conteudo">{% block content %} {% endblock %}</main>
+
+        <footer class="rodape">
+            <p>Vagas Django © Todos os direitos reservados</p>
+            <p>Desenvolvido por <a href="https://github.com/mayronH">mayronH</a></p>
+        </footer>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+
+        <script>
+            toastr.options = {
+                closeButton: true,
+                positionClass: "toast-top-right",
+                debug: false,
+                newestOnTop: false,
+                progressBar: true,
+                preventDuplicates: true,
+                onclick: null,
+                showDuration: "100",
+                hideDuration: "1000",
+                timeOut: "5000",
+                extendedTimeOut: "1000",
+                showEasing: "swing",
+                hideEasing: "linear",
+                showMethod: "show",
+                hideMethod: "hide",
+            };
+        </script>
+
+        {% block import %} 
+        {% endblock %}
+    </body>
+</html>

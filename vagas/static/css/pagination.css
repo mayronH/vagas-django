@@ -1,0 +1,29 @@
+.pagination{
+    margin-top: 2rem;
+}
+
+.pagination .content{
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--lightborderline);
+    border-radius: 5px;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: var(--blue);
+    padding: 4px 5px;
+}
+
+.pagination a:hover, .pagination a:focus, .pagination a:active{
+    color: var(--lightblue);
+}
+
+.pagination-number {
+    color: var(--darkblue);
+    font-size: 16pt;
+}
+
+.pagination-number:hover,
+.pagination-current {
+    color: var(--darkblue);
+}

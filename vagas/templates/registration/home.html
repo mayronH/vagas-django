@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+{% block meta %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="containerSignup">
+    <div class="singup">
+        <h1 class="pageTitle">Registrar</h1>
+        <div class="links">
+            <a href="{% url 'company_signup' %}">Registrar Empresa</a>
+            <a href="{% url 'applicant_signup' %}">Registrar Candidato</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

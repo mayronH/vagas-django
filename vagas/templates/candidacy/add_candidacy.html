@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/candidacy.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="containerForm">
+    <div class="form candidacy">
+        <h1 class="pageTitle">Candidatura</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <footer class="buttons">
+                <a href="javascript:history.back()">Cancelar</a>
+                <button type="submit">Enviar</button>
+            </footer>
+        </form>
+    </div>
+</div>
+{% endblock %}

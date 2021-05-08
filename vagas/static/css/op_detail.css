@@ -1,0 +1,74 @@
+.containerOpportunity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 60rem;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.opportunity {
+    flex: 1;
+    min-height: 42.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+    border-top: 1px solid var(--grey);
+}
+
+.opportunity hr:first-of-type {
+    margin-top: 0.625rem;
+}
+
+.opportunity hr:last-of-type{
+    margin-bottom: 0.625rem;
+}
+
+p {
+    padding: 0.625rem 0;
+
+    line-height: 1.5rem;
+}
+
+.opportunity h2{
+    font-size: 1.125rem;
+    color: var(--darkblue);
+}
+
+.opportunity h2:first-of-type{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: var(--blue);
+}
+
+.buttons a:first-child{
+    color: var(--darkblue);
+
+    border: 1px solid var(--darkborderline);
+}
+
+.buttons a:last-child{
+    color: var(--white);
+
+    background: var(--red);
+}
+
+.buttons a:first-child:hover{
+    background: var(--grey);
+}
+
+.buttons a:last-child:hover{
+    background: var(--darkred);
+}

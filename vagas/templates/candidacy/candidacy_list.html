@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% block meta %}
+    <meta name="description" content="Minhas candidaturas" />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/op.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<h1 class="pageTitle">Minhas Candidaturas</h1>
+<div class="containerOpportunities">
+    <div class="opportunities">
+        {% for c in candidacies %}
+            <div class="opportunity">
+                <header>
+                    <h2>{{c.opportunity.name}} - {{c.opportunity.author.company}}</h2>
+                </header>
+                <main>
+                    <p>{{ op.description|linebreaksbr }}</p>
+                    <p>{{ c.created_date}}</p>
+                </main>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if candidacies.paginator.num_pages > 1 %} 
+        {% include '_pagination.html' with candidacies=candidacies %} 
+    {% endif %}
+</div>
+
+{% endblock %}
