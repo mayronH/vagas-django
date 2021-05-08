@@ -67,6 +67,7 @@ def my_opportunities(request):
 @login_required
 @company_required
 def add_opportunity(request):
+    """Criar nova vaga"""
     if request.method == "POST":
         form = OpportunityForm(request.POST)
         if form.is_valid():
@@ -82,6 +83,7 @@ def add_opportunity(request):
 @login_required
 @company_required
 def opportunity_edit(request,pk):
+    """Editar vaga"""
     op = get_object_or_404(Opportunity, pk=pk)
     if request.method == "POST":
         form = OpportunityForm(request.POST, instance=op)
@@ -98,11 +100,13 @@ def opportunity_edit(request,pk):
 @login_required
 @company_required
 def opportunity_remove(request,pk):
+    """Remover vaga"""
     op = get_object_or_404(Opportunity, pk=pk)
     op.delete()
     return redirect('my_opportunities')
 
 def dashboard(request):
+    """Página de dashboard com todas as candidaturas e gráficos"""
     candidacy_list = Candidacy.objects.filter().order_by('created_date')
     data_dict = {(int(data.created_date.month)): 0 for data in candidacy_list}
 

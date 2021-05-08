@@ -1,8 +1,8 @@
-.pagination{
+.pagination {
     margin-top: 2rem;
 }
 
-.pagination .content{
+.pagination .content {
     padding: 1rem 1.5rem;
     border: 1px solid var(--lightborderline);
     border-radius: 5px;
@@ -14,7 +14,9 @@
     padding: 4px 5px;
 }
 
-.pagination a:hover, .pagination a:focus, .pagination a:active{
+.pagination a:hover,
+.pagination a:focus,
+.pagination a:active {
     color: var(--lightblue);
 }
 

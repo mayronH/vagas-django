@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
+{% block meta %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
 {% block content %}
 <div class="container">
-    <h1>Bem vindo <br>Sistema de vagas desenvolvido em Django.</h1>
+    <h1>Bem vindo, <br>Sistema de vagas desenvolvido em Django.</h1>
+
+    <img src="https://www.pinclipart.com/picdir/big/4-46125_jobs-clipart-person-job-job-search-png-transparent.png" alt="Job Search">
 </div>
 {% endblock %}

@@ -47,9 +47,13 @@
                             <a href="{% url 'my_opportunities' %}">Minhas Vagas</a>
                         </li>
                         {% endif %}
-                        <li>
-                            <a href="{% url 'dashboard' %}">Relatórios</a>
-                        </li>
+
+                        {% if not user.is_applicant and not user.is_company %}
+                            <li>
+                                <a href="{% url 'dashboard' %}">Relatórios</a>
+                            </li>
+                        {% endif %}
+
                         {% if user.is_applicant %}
                         <li>
                             <a href="{% url 'my_candidacies' %}">Minhas Candidaturas</a>

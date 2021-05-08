@@ -1,0 +1,26 @@
+.container {
+    height: 100%;
+
+    max-width: 60rem;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    width: 100%;
+
+    color: var(--darkblue);
+    font-size: 2.5rem;
+    text-align: left;
+
+    margin-bottom: 2rem;
+}

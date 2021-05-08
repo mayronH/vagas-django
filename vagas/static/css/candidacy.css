@@ -1,13 +1,13 @@
-.candidacy{
+.candidacy {
     min-height: 42.5rem;
 }
 
-.buttons a{
+.buttons a {
     color: var(--darkblue);
 
     border: 1px solid var(--darkborderline);
 }
 
-.buttons a:hover{
+.buttons a:hover {
     background: var(--grey);
 }

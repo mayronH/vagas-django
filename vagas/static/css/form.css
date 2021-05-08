@@ -1,4 +1,4 @@
-.containerForm{
+.containerForm {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,18 +8,18 @@
     margin: 0 auto;
 }
 
-.form{
+.form {
     min-width: 20rem;
 
     padding: 1.25rem 1.5rem;
-    
+
     background: var(--white);
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
-.form label{
+.form label {
     font-family: "Lexend", sans-serif;
     font-weight: 400;
     font-size: 1.125rem;
@@ -28,7 +28,9 @@
     display: block;
 }
 
-.form input, .form textarea, .form select{
+.form input,
+.form textarea,
+.form select {
     width: 100%;
 
     padding: 0.5rem 0.625rem;
@@ -40,21 +42,21 @@
     border-radius: 5px;
 }
 
-.form ul{
+.form ul {
     margin: 1rem 0 1rem 1.5rem;
 
     color: var(--blue);
 }
 
-.helptext{
+.helptext {
     color: var(--blue);
 }
 
-.form .errorlist{
+.form .errorlist {
     color: var(--red);
 }
 
-.buttons button{
+.buttons button {
     color: var(--white);
 
     background: var(--red);
@@ -62,6 +64,6 @@
     border: none;
 }
 
-.buttons button:hover{
+.buttons button:hover {
     background: var(--darkred);
 }

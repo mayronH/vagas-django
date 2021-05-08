@@ -31,7 +31,7 @@ hr {
     margin-top: 0.625rem;
 }
 
-.opportunity hr:last-of-type{
+.opportunity hr:last-of-type {
     margin-bottom: 0.625rem;
 }
 
@@ -41,34 +41,34 @@ p {
     line-height: 1.5rem;
 }
 
-.opportunity h2{
+.opportunity h2 {
     font-size: 1.125rem;
     color: var(--darkblue);
 }
 
-.opportunity h2:first-of-type{
+.opportunity h2:first-of-type {
     text-align: center;
     text-transform: uppercase;
     font-size: 2rem;
     color: var(--blue);
 }
 
-.buttons a:first-child{
+.buttons a:first-child {
     color: var(--darkblue);
 
     border: 1px solid var(--darkborderline);
 }
 
-.buttons a:last-child{
+.buttons a:last-child {
     color: var(--white);
 
     background: var(--red);
 }
 
-.buttons a:first-child:hover{
+.buttons a:first-child:hover {
     background: var(--grey);
 }
 
-.buttons a:last-child:hover{
+.buttons a:last-child:hover {
     background: var(--darkred);
 }

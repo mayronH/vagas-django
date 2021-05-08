@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from .models import Company, Applicant, Opportunity, Salary, Schooling, CustomUser
 
 class CustomUserAdmin(UserAdmin):
+    """Usuário customizado para admin, o login é feito pelo email"""
     model = CustomUser
     list_display = ('email', 'is_staff', 'is_active',)
     list_filter = ('email', 'is_staff', 'is_active',)
